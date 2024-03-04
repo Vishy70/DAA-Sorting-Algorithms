@@ -49,7 +49,7 @@ def CompareAverageCase():
         for algo in sorting_algorithms:
             total_time = 0
             for i in range(30):
-                random_array = random_arrays[30*(size//100-1)+i]  # Get the corresponding random array
+                random_array = random_arrays[(size//1000-1)+i]  # Get the corresponding random array
                 arr_copy = random_array.copy()  # Use copy of the random array for each algorithm
                 start_time = time.time()
                 ChooseSort(sorting_algorithms.index(algo) + 1, arr_copy)
