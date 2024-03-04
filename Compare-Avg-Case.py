@@ -30,7 +30,7 @@ def ChooseSort(choice, arr):
 
 
 def CompareAverageCase():
-    array_sizes = list(range(1000, 2001, 100))
+    array_sizes = list(range(1000, 50001, 100))
     sorting_algorithms = [
         Bubble_sort,
         Bubble_sort2,
