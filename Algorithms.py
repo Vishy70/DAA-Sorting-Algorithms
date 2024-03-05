@@ -3,7 +3,7 @@ import time
 import matplotlib.pyplot as plt
 
 #Bubble Sort
-def Bubble_sort(arr):
+def Bubble_sort2(arr):
     n = len(arr)
     for i in range(n):
         for j in range(0, n-i-1):
@@ -11,7 +11,7 @@ def Bubble_sort(arr):
                 arr[j], arr[j+1] = arr[j+1], arr[j]
 
 #Bubble Sort with pruning
-def Bubble_sort2(arr):
+def Bubble_sort(arr):
     n = len(arr)
     for i in range(n):
         sorted = True  
@@ -68,7 +68,6 @@ def Quick_sort1(arr):
     #Quick Sort with pivot = low!
     def quick_sort_1(arr, low, high):
         if low < high:
-            pivot_index_fake = np.random.randint(low, high + 1)
             pivot = arr[low]
             i = low
             j = high
@@ -127,7 +126,6 @@ def Quick_sort3(arr):
     #Quick sort with pivot = median of 3
     def quick_sort_3(arr, low, high):
         if low < high:
-            pivot_index_fake = np.random.randint(low, high + 1)
             pivot_index = median_of_three(arr, low, high)
             arr[low], arr[pivot_index] = arr[pivot_index], arr[low]
             pivot = arr[low]

@@ -2,11 +2,12 @@ import numpy as np
 import time
 import matplotlib.pyplot as plt
 import Algorithms
-import generator.generating as generating
 import plotter
-from Algorithms import Bubble_sort, Bubble_sort2, Insertion_sort, Merge_sort, Quick_sort1, Quick_sort2, Quick_sort3, Heap_sort, Radix_sort
-from generator.generating import GenerateRandom, GenerateRandomDec, GenerateRandomInc
-from plotter import plot_results
+from Algorithms import Quick_sort1, Quick_sort2, Quick_sort3
+from generator.gen_quick1 import Generate_Quick1_Worst
+from generator.gen_quick2 import Generate_Quick2_Worst
+from generator.gen_quick3 import Generate_Quick3_Worst
+from plotter import plot_results 
 
 
 
@@ -14,14 +15,9 @@ from plotter import plot_results
 #Function name based ChooseSort
 def ChooseSort(choice, arr):
     sorting_functions = {
-        #2: Bubble_sort2
-        #3: Insertion_sort,
-        1: Merge_sort,
-        #2: Quick_sort1,
-        #3: Quick_sort2,
-        2: Quick_sort3,
-        3: Heap_sort,
-        4: Radix_sort
+        1: Quick_sort1,
+        2: Quick_sort2,
+        3: Quick_sort3,
     }
 
     if choice in sorting_functions:
@@ -31,26 +27,24 @@ def ChooseSort(choice, arr):
         print("Invalid choice")
 
 
-def CompareAverageCase(iterations):
-    array_sizes = list(range(1000, 10001, 100))
+def CompareWorstCase(iterations):
+    array_sizes = list(range(10, 1001, 25))
     sorting_algorithms = [
-        #Bubble_sort2,
-        #Insertion_sort,
-        Merge_sort,
-        #Quick_sort1,
-        #Quick_sort2,
+        Quick_sort1,
+        Quick_sort2,
         Quick_sort3,
-        Heap_sort,
-        Radix_sort
+    ]
+    gen_algorithms = [
+        Generate_Quick1_Worst,
+        Generate_Quick2_Worst,
+        Generate_Quick3_Worst
     ]
 
     average_times = {sorting_algo.__name__: [] for sorting_algo in sorting_algorithms}
 
-    #random_arrays = GenerateRandom(array_sizes)  # Generate random arrays
-
-    for index, size in enumerate(array_sizes):
-        random_array = GenerateRandom(size)
-        for algo in sorting_algorithms:
+    for index, algo in enumerate(sorting_algorithms):
+        for size in array_sizes:
+            random_array = gen_algorithms[index](size)
             total_time = 0
             for i in range(iterations):
                 #random_array = random_arrays[index]
@@ -67,5 +61,5 @@ def CompareAverageCase(iterations):
 
 if __name__ == "__main__":
     iterations = 10
-    sorting_algorithms, average_times, array_sizes = CompareAverageCase(iterations)
+    sorting_algorithms, average_times, array_sizes = CompareWorstCase(iterations)
     plot_results(sorting_algorithms, average_times, array_sizes)
