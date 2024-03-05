@@ -10,7 +10,7 @@ def plot_results(sorting_algorithms, average_times, array_sizes):
     plt.subplot(2, 1, 1)
     for algo in sorting_algorithms:
         name = algo.__name__
-        plt.plot(array_sizes, average_times[name], marker='o', label=name)
+        plt.plot(array_sizes, average_times[name], label=name)
     plt.title('Average Sorting Time vs Array Size (Normal Scale)')
     plt.xlabel('Array Size')
     plt.ylabel('Average Sorting Time (seconds)')
@@ -21,7 +21,7 @@ def plot_results(sorting_algorithms, average_times, array_sizes):
     plt.subplot(2, 1, 2)
     for algo in sorting_algorithms:
         name = algo.__name__
-        plt.plot(array_sizes, average_times[name], marker='o', label=name)
+        plt.plot(array_sizes, average_times[name], label=name)
     plt.title('Average Sorting Time vs Array Size (Logarithmic Scale)')
     plt.xlabel('Array Size')
     plt.ylabel('Average Sorting Time (seconds)')
