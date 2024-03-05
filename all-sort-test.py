@@ -1,9 +1,9 @@
 import numpy as np
 import time
 import Algorithms
-import generating
+import generator.generating as generating
 from Algorithms import Bubble_sort, Bubble_sort2, Insertion_sort, Merge_sort, Quick_sort1, Quick_sort2, Quick_sort3, Heap_sort, Radix_sort
-from generating import GenerateRandom, GenerateRandomDec, GenerateRandomInc
+from generator.generating import GenerateRandom, GenerateRandomDec, GenerateRandomInc
 
 #index-based ChooseSort
 def ChooseSort(choice, arr):

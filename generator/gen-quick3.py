@@ -1,0 +1,12 @@
+import numpy as np
+import generating as generating
+from generating import GenerateRandom, GenerateRandomDec, GenerateRandomInc, GenerateDuped
+
+def Generate_Quick3_Best(array_size, seed=42):
+    return GenerateRandomInc(array_size, seed)
+
+def Generate_Quick3_Worst(array_size, seed=42):
+    return GenerateDuped(array_size, seed)
+
+def Generate_Quick3_Average(array_size, seed=42):
+    return GenerateRandom(array_size, seed)
