@@ -34,23 +34,24 @@ def SortAny():
         arr = list(map(int, array_string.split())) 
     elif(choice1 == 1):
         arr_size = int(input("Enter size of array: "))
-        arr = GenerateRandom([arr_size])[0]
+        arr = GenerateRandom(arr_size)
     elif(choice1 == 2):
         arr_size = int(input("Enter size of array: "))
-        arr = GenerateRandomInc([arr_size])[0]
+        arr = GenerateRandomInc(arr_size)
     elif(choice1 == 3):
         arr_size = int(input("Enter size of array: "))
-        arr = GenerateRandomDec([arr_size])[0]
+        arr = GenerateRandomDec(arr_size)
     else:
         print("Error! Entered an invalid input!")
         exit()  
     print("Menu:\n1.Bubble Sort\n2.BubbleSort2\n3.InsertionSort\n4.MergeSort\n5.QuickSort1\n6.QuickSort2\n7.QuickSort3\n8.HeapSort\n9.RadixSort")
     choice2 = int(input("Enter choice:"))
+    print("Initial array: ", arr)
     start_time = time.time()
     ChooseSort(choice2,arr)
     end_time = time.time()
     total_time = end_time - start_time
-    print("Total time: ", round(total_time, 6))
+    print("Total time, in microseconds: ", round(total_time, 6))
 
 if __name__ == "__main__":
     SortAny()

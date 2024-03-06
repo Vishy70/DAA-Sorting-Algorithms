@@ -36,13 +36,13 @@ def TestAllSortingAlgos():
         arr = list(map(int, array_string.split())) 
     elif(choice == 1):
         arr_size = int(input("Enter size of array: "))
-        arr = GenerateRandom([arr_size])[0]
+        arr = GenerateRandom(arr_size)
     elif(choice == 2):
         arr_size = int(input("Enter size of array: "))
-        arr = GenerateRandomInc([arr_size])[0]
+        arr = GenerateRandomInc(arr_size)
     elif(choice == 3):
         arr_size = int(input("Enter size of array: "))
-        arr = GenerateRandomDec([arr_size])[0]
+        arr = GenerateRandomDec(arr_size)
     else:
         print("Error! Entered an invalid input!")
         exit()

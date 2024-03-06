@@ -68,6 +68,7 @@ def Quick_sort1(arr):
     #Quick Sort with pivot = low!
     def quick_sort_1(arr, low, high):
         if low < high:
+            random_gen = np.random.randint(low, high + 1)
             pivot = arr[low]
             i = low
             j = high
@@ -126,6 +127,7 @@ def Quick_sort3(arr):
     #Quick sort with pivot = median of 3
     def quick_sort_3(arr, low, high):
         if low < high:
+            random_gen = np.random.randint(low, high + 1)
             pivot_index = median_of_three(arr, low, high)
             arr[low], arr[pivot_index] = arr[pivot_index], arr[low]
             pivot = arr[low]
